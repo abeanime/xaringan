@@ -1,0 +1,128 @@
+---
+title: "小试牛刀"
+subtitle: "What a Good Day!"  
+author: 
+  - "豆皮蛋酒"
+date: '`r Sys.Date()`'
+institute: "<br> 华中师范大学<br>经济与工商管理学院"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countdown: 60000
+      navigation :
+        click: false 
+        scroll: false
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+library(xaringanExtra)
+library(xaringanthemer)
+
+library(xaringanthemer)
+library(xaringanthemer)
+xaringanExtra::use_editable()
+xaringanExtra::use_panelset()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_share_again()
+xaringanExtra::use_xaringan_extra()
+xaringanExtra::use_search(show_icon = TRUE)
+xaringanExtra::use_extra_styles(hover_code_line = T,mute_unhighlighted_code = T)
+
+xaringanExtra::use_logo(image_url = "https://www.ccnu.edu.cn/__local/7/B7/24/0EA1E510D6F171BBEA51CFF88E8_A12ECAAB_5EDF.jpg",
+link_url = "https://www.ccnu.edu.cn/",
+position = xaringanExtra::css_position(top = "0.3em", right = "0.3em"),
+width = "100px",height ="100px")
+
+
+xaringanthemer::style_duo_accent(
+  primary_color = "#1B7386",
+  secondary_color = alpha("white"),
+  code_font_family = "Menlo",
+  code_inline_color = alpha("gold",0.8),
+  text_slide_number_color = alpha("firebrick"),
+  code_font_size = "15px"
+  )
+```
+
+
+```{r xaringan-logo,echo = F}
+xaringanExtra::use_logo(
+  image_url = "https://www.ccnu.edu.cn/__local/7/B7/24/0EA1E510D6F171BBEA51CFF88E8_A12ECAAB_5EDF.jpg",
+  link_url = "https://www.ccnu.edu.cn/",
+  position = xaringanExtra::css_position(top = "0.3em", right = "1em"),
+  width = "100px",height ="100px" 
+)
+```
+
+
+<style>
+  .title {
+    border-radius:9px;
+    border-bottom: 4mm ridge #FF6978;
+  }
+</style>
+
+
+# Panelset的定制
+
+
+```{r echo=F}
+xaringanExtra::style_panelset_tabs(
+  active_foreground = "#0051BA",
+  hover_foreground = "#d22"
+)
+```
+
+
+.panelset[
+
+.panel[.panel-name[🏷 1]
+what !?
+]
+
+.panel[.panel-name[🏷 2]
+Hello, world !
+```{r}
+diamonds %>% 
+  group_by(cut) %>% 
+  summarise(
+    mean = mean(price)
+  )
+```
+
+]
+
+.panel[.panel-name[🏷 3]
+Hi, there!
+]
+
+]
+
+
+
+---
+# editable的定制
+
+.can-edit[这是普通的文字。]
+
+
+---
+class:center inverse
+
+# 感谢您的聆听！
+### <span style='color:steelblue'>敬请批评指正</span>
+
+
+
+```{r, echo=FALSE, fig.align='center', out.width='55%'}
+knitr::include_graphics("pic/logo.jpg")
+```
+
+
